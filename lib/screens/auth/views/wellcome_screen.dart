@@ -5,6 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pizza/blocs/authentication_bloc/authentication_bloc.dart';
+import 'package:pizza/screens/auth/views/sign_up_screen.dart';
 import 'package:user_repository/user_repository.dart';
 
 import '../blocs/sign_in_bloc/sign_in_bloc.dart';
@@ -58,7 +59,7 @@ class _WellcomeScreenState extends State<WellcomeScreen> with TickerProviderStat
                   width: MediaQuery.of(context).size.width/1.3,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Theme.of(context).colorScheme.secondary
+                    color: Theme.of(context).colorScheme.primary
                   ),
                 ),
               ),
@@ -114,7 +115,7 @@ class _WellcomeScreenState extends State<WellcomeScreen> with TickerProviderStat
                               create: (context) => SignUpBloc(
                                 context.read<AuthenticationBloc>().userRepository
                               ),
-                              child: const SignInScreen(),
+                              child: const SignUpScreen(),
                             )
                           ],
                         )

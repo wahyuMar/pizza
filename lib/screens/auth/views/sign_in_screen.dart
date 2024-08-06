@@ -89,8 +89,8 @@ class _SignInScreenState extends State<SignInScreen> {
                 validator: (val) {
                   if (val!.isEmpty) {
                     return 'Password is required';
-                  } else if (!RegExp('^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}\$').hasMatch(val)) {
-                    return 'Password must contain at least 8 characters, including letters and numbers';
+                  } else if (!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~`)\%\-(_+=;:,.<>/?"[{\]}\|^]).{8,}$').hasMatch(val)) {
+                    return 'Please enter a valid password';
                   }
                   return null;
                 },
